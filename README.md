@@ -1,0 +1,1 @@
+# wholesale-restrictions-on-collection-and-product-pages
