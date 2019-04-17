@@ -1,0 +1,11 @@
+{% if template contains 'product' and canonical_url contains '/collections/' %}
+<meta name="robots" content="noindex">{% else %}
+<meta name="robots" content="index,follow">{% endif %}
+
+
+<link rel="canonical" href="{{ canonical_url }}">
+{% if template == 'product' or canonical_url contains '/collections/' %}{% if shop.customer_accounts_enabled %}{% if customer %}{% if customer.tags contains 'wholesaler' %}{%else%}
+<meta http-equiv="refresh" content="0;url={{shop.url}}/pages/subscription" />
+<script type="text/javascript">window.location = '{{shop.url}}/pages/subscription?url={{ theme_role | theme_url }}';</script>{% endif %}{% else %}
+<meta http-equiv="refresh" content="0;url={{shop.url}}/account/login" />
+<script type="text/javascript">window.location = '{{shop.url}}/account/login?url={{ theme_role | theme_url }}';</script>{% endif %}{% endif %}{% endif %}
