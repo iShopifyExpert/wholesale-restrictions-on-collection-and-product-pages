@@ -1,4 +1,4 @@
-{% if template contains 'product' and canonical_url contains '/collections/' %}
+{% if template contains 'product' and request.path contains '/collections/' %}
 <meta name="robots" content="noindex">{% else %}
 <meta name="robots" content="index,follow">{% endif %}
 
